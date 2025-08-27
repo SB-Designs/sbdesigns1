@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submitted | SB Designs</title>
+  <link rel="icon" type="image/x-icon" href="Media/sbdesigns.png">
+  <link rel="stylesheet" href="/CSS/index.css">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <a href="/index.html" class="logo">
+      <img src="Media/sbdesigns.png" alt="SB Designs Logo">
+    </a>
+    <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+    <label for="menu-icon"></label>
+
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://sb-designs.betteruptime.com">Status</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <section class="section-center">
+      <h1>Form Submitted!</h1>
+      <h2>We aim to respond to you in the next 3 days.</h2>
+      <a href="/index.html"><button>Return to Home</button></a>
+    </section>
+  </main>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <script>
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.querySelector('.custom-cursor');
+  
+        // Get mouse coordinates, adjust for boundaries
+        let x = e.clientX;
+        let y = e.clientY;
+  
+        // Move cursor element to mouse position
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+    });
+    </script>
+    <!-- Custom Cursor End -->
+</body>
+
+</html>

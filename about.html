@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | SB Designs</title>
+  <link rel="icon" type="image/x-icon" href="Media/sbdesigns.png">
+  <link rel="stylesheet" href="/CSS/index.css">
+ <link rel="icon" type="image/x-icon" href="Media/sbdesigns.png">
+  <link rel="stylesheet" href="/CSS/index.css">
+  <meta name="description" content="At SB Designs, we create innovative computer programs, websites, and games for the enjoyment and exploration of coding, using HTML, CSS, JS and Python.">
+  <meta name="keywords" content="Graphic design, web design, logo design, branding, SB Designs">
+  <meta name="author" content="SB Designs">
+  <meta property="og:title" content="SB Designs">
+  <meta property="og:description" content="Innovative computer programs, websites, and games.">
+  <meta property="og:image" content="/Media/logo.png">
+  <meta property="og:url" content="https://sbdesigns.pages.dev/about">
+  <meta name="robots" content="index, follow">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <a href="/index.html" class="logo">
+      <img src="Media/sbdesigns.png" alt="SB Designs Logo">
+    </a>
+    <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+    <label for="menu-icon"></label>
+
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://sb-designs.betteruptime.com">Status</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <section class="section-center">
+      <h1 class="mb-0">About</h1>
+      <h2>Based near London, SB Designs create innovative computer programs, websites, and games for the enjoyment and exploration
+        of coding, using HTML, CSS, JS and Python. As well of programming, we also make graphic designs, making products, such as logos and backgrounds.</h2>
+    </section>
+  </main>
+
+  <!-- Footer Section (optional, for future content) -->
+     <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <script>
+  document.addEventListener('mousemove', function(e) {
+      const cursor = document.querySelector('.custom-cursor');
+
+      // Get mouse coordinates, adjust for boundaries
+      let x = e.clientX;
+      let y = e.clientY;
+
+      // Move cursor element to mouse position
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+  });
+  </script>
+  <!-- Custom Cursor End -->
+</body>
+
+</html>

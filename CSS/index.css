@@ -1,0 +1,413 @@
+@import url('https://fonts.cdnfonts.com/css/london-tube');
+
+body {
+  font-family: 'London Tube', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ececee;
+  background-color: #1f2029;
+  overflow-y: auto;
+  /* Allow scrolling */
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+  height: 100vh;
+  width: 100%;
+
+  /* Fade in animation */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2029;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ececee;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffeba7;
+}
+
+.section-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  text-align: center;
+  transform: translateY(-50%);
+
+  /* Fade in animation */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+h1 {
+  font-family: 'London Tube', sans-serif;
+  font-weight: 800;
+  font-size: 7vw;
+  line-height: 1;
+  color: transparent;
+  text-align: center;
+  -webkit-text-stroke: 2px #ffeba7;
+  text-stroke: 2px #ffeba7;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.menu-icon:checked+label,
+.menu-icon:not(:checked)+label {
+  position: fixed;
+  top: 63px;
+  right: 75px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menu-icon:checked+label:before,
+.menu-icon:not(:checked)+label:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  border-top: 2px solid #ececee;
+  border-bottom: 2px solid #ececee;
+  transition: all 200ms ease;
+}
+
+.menu-icon:checked+label:after,
+.menu-icon:not(:checked)+label:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  top: 10px;
+  right: 4px;
+  background-color: #ececee;
+  margin-top: -1px;
+  transition: all 200ms ease;
+}
+
+.menu-icon:checked+label:before {
+  top: 10px;
+  transform: rotate(45deg);
+  height: 2px;
+  background-color: #ececee;
+  border-width: 0;
+}
+
+.menu-icon:checked+label:after {
+  width: 30px;
+  margin-top: 0;
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+.nav {
+  position: fixed;
+  top: 33px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  background-color: #353746;
+  animation: border-transform 7s linear infinite;
+  transition: all 350ms ease;
+  z-index: 9;
+}
+
+@keyframes border-transform {
+
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+
+  14% {
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+  }
+
+  28% {
+    border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+  }
+
+  42% {
+    border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+  }
+
+  56% {
+    border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+  }
+
+  70% {
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+  }
+
+  84% {
+    border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+  }
+}
+
+.menu-icon:checked~.nav {
+  animation-play-state: paused;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 200%;
+  height: 200%;
+  transition: all 750ms ease;
+}
+
+.nav ul {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  margin: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 250ms ease;
+}
+
+.nav ul li a {
+  font-family: 'London Tube', sans-serif;
+  font-size: 9vh;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ececee;
+  transition: color 250ms ease;
+}
+
+.nav ul li a:hover {
+  color: #ffeba7;
+}
+
+.nav ul li a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  height: 2vh;
+  width: 0;
+  left: 0;
+  background-color: #353746;
+  transition: width 250ms ease;
+}
+
+.nav ul li a:hover:after {
+  width: 100%;
+}
+
+.menu-icon:checked~.nav ul li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.logo {
+  position: absolute;
+  top: 60px;
+  left: 50px;
+  z-index: 11;
+}
+
+.logo img {
+  height: 75px;
+  display: block;
+}
+
+
+@media screen and (max-width: 991px) {
+
+  .menu-icon:checked+label,
+  .menu-icon:not(:checked)+label {
+    right: 55px;
+  }
+
+  .logo {
+    left: 30px;
+  }
+
+  .nav {
+    right: 30px;
+  }
+
+  h1 {
+    font-size: 9vw;
+    -webkit-text-fill-color: #ffeba7;
+    text-fill-color: #ffeba7;
+  }
+
+  .nav ul li a {
+    font-size: 8vh;
+  }
+}
+
+button {
+  font-family: 'London Tube', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: #353746;
+  color: #ececee;
+  border: 2px solid #ececee;
+  padding: 15px 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 250ms ease, color 250ms ease, transform 150ms ease;
+  display: inline-block;
+  /* Allow buttons to sit side-by-side */
+  margin: 0 10px;
+  /* Add spacing between buttons */
+}
+
+button:hover {
+  background-color: #ffeba7;
+  color: #1f2029;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* This pushes header to the bottom */
+  font-family: 'London Tube', sans-serif;
+  /* Assuming you're using this font */
+}
+
+.header {
+  margin-top: auto;
+  /* This ensures the header stays at the bottom */
+}
+
+.section-center {
+  flex-grow: 1;
+  /* This allows the main content to take the available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Center text alignment */
+}
+
+nav {
+  padding: 20px 0;
+  /* Space around the nav items */
+}
+
+ul {
+  list-style-type: none;
+  /* Remove default list styling */
+  padding: 0;
+  /* Remove default padding */
+}
+
+ul li {
+  margin: 0 10px;
+  /* Space between list items */
+}
+
+.languages-list {
+  margin-top: 20px;
+  /* Space above the languages list */
+  font-size: 1.2rem;
+  /* Adjust font size as needed */
+}
+
+/* Hide the default cursor */
+body {
+    cursor: none;
+    overflow: hidden; /* Prevents cursor from extending the page */
+}
+
+/* Custom cursor styling */
+.custom-cursor {
+    position: fixed;
+    width: 20px; /* Initial size */
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    pointer-events: none;
+    transition: width 0.2s ease, height 0.2s ease, transform 0.2s ease;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+/* Hide cursor on links, buttons, and the menu button */
+a:hover ~ .custom-cursor, button:hover ~ .custom-cursor, .menu-icon + label:hover ~ .custom-cursor {
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+a:hover, button:hover, .menu-icon + label:hover {
+    cursor: none !important; /* Hide the default cursor on hover */
+}
+
+/* Hide the cursor on mobile devices (screens smaller than 991px) */
+@media screen and (max-width: 991px) {
+    .custom-cursor {
+        display: none; /* Hide custom cursor */
+    }
+
+    body {
+        cursor: auto; /* Restore default cursor on mobile */
+    }
+}
